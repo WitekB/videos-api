@@ -1,10 +1,7 @@
 var express = require('express');
+var videos = require('./routes/videos');
 var app = express();
 
-app.get('/', function(req, res) {
-    res.send('Hello world!');
-});
+app.use('/', videos);
 
-app.listen(3000, function() {
-    console.log('Example app on 3000 port');
-});
+module.exports = app;
